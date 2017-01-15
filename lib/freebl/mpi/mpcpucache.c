@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #include "mpi.h"
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 
 /*
  * This file implements a single function: s_mpi_getProcessorLineSize();

@@ -6,11 +6,11 @@
 #include "stubs.h"
 #endif
 
-#include "prerror.h"
+#include <nspr4/prerror.h>
 #include "secerr.h"
 
-#include "prtypes.h"
-#include "prinit.h"
+#include <nspr4/prtypes.h>
+#include <nspr4/prinit.h>
 #include "blapi.h"
 #include "blapii.h"
 #include "nssilock.h"
@@ -538,7 +538,7 @@ RNG_RandomUpdate(const void *data, size_t bytes)
         bytes = PRNG_MAX_ADDITIONAL_BYTES;
     }
 #else
-    PR_STATIC_ASSERT(sizeof(size_t) <= 4);
+    //PR_STATIC_ASSERT(sizeof(size_t) <= 4);
 #endif
 
     PZ_Lock(globalrng->lock);

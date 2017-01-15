@@ -11,22 +11,22 @@
  */
 
 #include "seccomon.h"
-#include "prmem.h"
-#include "prerror.h"
-#include "plarena.h"
+#include <nspr4/prmem.h>
+#include <nspr4/prerror.h>
+#include <nspr4/plarena.h>
 #include "secerr.h"
-#include "prmon.h"
+#include <nspr4/prmon.h>
 #include "nssilock.h"
 #include "secport.h"
-#include "prenv.h"
-#include "prinit.h"
+#include <nspr4/prenv.h>
+#include <nspr4/prinit.h>
 
 #ifdef DEBUG
 #define THREADMARK
 #endif /* DEBUG */
 
 #ifdef THREADMARK
-#include "prthread.h"
+#include <nspr4/prthread.h>
 #endif /* THREADMARK */
 
 #if defined(XP_UNIX) || defined(XP_OS2) || defined(XP_BEOS)

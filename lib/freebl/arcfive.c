@@ -10,7 +10,7 @@
 #endif
 
 #include "blapi.h"
-#include "prerror.h"
+#include <nspr4/prerror.h>
 
 /******************************************/
 /*

@@ -7,5 +7,5 @@ include manifest.mn
 include $(CORE_DEPTH)/coreconf/config.mk
 include config.mk
 include $(CORE_DEPTH)/coreconf/rules.mk
-
+INCLUDES += -I/usr/include/nspr4
 export:: private_export

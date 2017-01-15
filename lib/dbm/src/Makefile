@@ -45,4 +45,4 @@ include $(CORE_DEPTH)/coreconf/rules.mk
 #######################################################################
 
 
-
+INCLUDES += -I/usr/include/nspr4

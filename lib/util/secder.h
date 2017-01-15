@@ -14,12 +14,12 @@
 
 #include <time.h>
 
-#include "plarena.h"
-#include "prlong.h"
+#include <nspr4/plarena.h>
+#include <nspr4/prlong.h>
 
 #include "seccomon.h"
 #include "secdert.h"
-#include "prtime.h"
+#include <nspr4/prtime.h>
 
 SEC_BEGIN_PROTOS
 

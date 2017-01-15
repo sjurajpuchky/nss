@@ -22,7 +22,7 @@
 #define nssrwlk_h___
 
 #include "utilrename.h"
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "nssrwlkt.h"
 
 #define NSS_RWLOCK_RANK_NONE 0

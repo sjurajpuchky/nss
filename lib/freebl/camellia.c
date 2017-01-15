@@ -6,11 +6,11 @@
 #include "stubs.h"
 #endif
 
-#include "prinit.h"
-#include "prerr.h"
+#include <nspr4/prinit.h>
+#include <nspr4/prerr.h>
 #include "secerr.h"
 
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "blapi.h"
 #include "camellia.h"
 #include "sha_fast.h" /* for SHA_HTONL and related configuration macros */

@@ -6,16 +6,16 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #include "loader.h"
-#include "prmem.h"
-#include "prerror.h"
-#include "prinit.h"
-#include "prenv.h"
+#include <nspr4/prmem.h>
+#include <nspr4/prerror.h>
+#include <nspr4/prinit.h>
+#include <nspr4/prenv.h>
 #include "blname.c"
 
-#include "prio.h"
-#include "prprf.h"
+#include <nspr4/prio.h>
+#include <nspr4/prprf.h>
 #include <stdio.h>
-#include "prsystem.h"
+#include <nspr4/prsystem.h>
 
 static const char *NameOfThisSharedLib =
     SHLIB_PREFIX "softokn" SOFTOKEN_SHLIB_VERSION "." SHLIB_SUFFIX;

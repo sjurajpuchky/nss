@@ -9,10 +9,10 @@
 #include "stubs.h"
 #endif
 
-#include "prerr.h"
+#include <nspr4/prerr.h>
 #include "secerr.h"
 
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "blapi.h"
 #include "secitem.h"
 #include "mpi.h"

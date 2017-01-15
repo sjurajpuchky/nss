@@ -8,11 +8,11 @@
 #include "stubs.h"
 #endif
 
-#include "prerror.h"
+#include <nspr4/prerror.h>
 #include "secerr.h"
 
-#include "prtypes.h"
-#include "prinit.h"
+#include <nspr4/prtypes.h>
+#include <nspr4/prinit.h>
 #include "blapi.h"
 #include "nssilock.h"
 #include "secitem.h"

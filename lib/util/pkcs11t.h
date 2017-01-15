@@ -22,7 +22,7 @@
 #define CK_TRUE 1
 #define CK_FALSE 0
 
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 
 #define CK_PTR *
 #define CK_NULL_PTR 0

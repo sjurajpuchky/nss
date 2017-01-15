@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #include "secport.h"
-#include "nspr.h"
+#include <nspr4/nspr.h>
 
 #ifdef XP_UNIX
 #include <unistd.h>

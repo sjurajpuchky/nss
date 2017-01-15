@@ -7,8 +7,8 @@
  * stored so we can decide that later.
  */
 #include "secport.h"
-#include "prprf.h"
-#include "prenv.h"
+#include <nspr4/prprf.h>
+#include <nspr4/prenv.h>
 #include "utilpars.h"
 #include "utilmodt.h"
 

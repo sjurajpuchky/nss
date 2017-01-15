@@ -10,7 +10,7 @@
 #include "stubs.h"
 #endif
 
-#include "prerr.h"
+#include <nspr4/prerr.h>
 #include "secerr.h"
 
 #include "blapi.h"

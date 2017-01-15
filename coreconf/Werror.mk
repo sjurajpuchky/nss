@@ -19,7 +19,7 @@ ifdef CC_IS_CLANG
 endif
 
 ifndef CC_IS_GCC
-  CC_IS_GCC := $(shell $(CC) -x c -E -Wall -Werror /dev/null >/dev/null 2>&1 && echo 1)
+  CC_IS_GCC := $(shell $(CC) -x c -E -Wall /dev/null >/dev/null 2>&1 && echo 1)
   # Export CC_IS_GCC to save a shell invocation when recursing.
   export CC_IS_GCC
 endif
@@ -48,7 +48,7 @@ ifndef WARNING_CFLAGS
   else
     # This tests to see if enabling the warning is possible before
     # setting an option to disable it.
-    disable_warning = $(shell $(CC) -x c -E -Werror -W$(1) /dev/null >/dev/null 2>&1 && echo -Wno-$(1))
+    disable_warning = $(shell $(CC) -x c -E -W$(1) /dev/null >/dev/null 2>&1 && echo -Wno-$(1))
 
     WARNING_CFLAGS = -Wall
     ifdef CC_IS_CLANG
@@ -73,7 +73,7 @@ ifndef WARNING_CFLAGS
         #   sprintf is often misused; please use snprintf [-Werror]
         # So, just suppress -Werror entirely on Android
         NSS_ENABLE_WERROR = 0
-        $(warning OS_TARGET is Android, disabling -Werror)
+        $(warning OS_TARGET is Android, disabling)
       else
         ifdef CC_IS_CLANG
           # Clang reports its version as an older gcc, but it's OK
@@ -94,7 +94,7 @@ ifndef WARNING_CFLAGS
     endif #ndef NSS_ENABLE_WERROR
 
     ifeq ($(NSS_ENABLE_WERROR),1)
-      WARNING_CFLAGS += -Werror
+      # WARNING_CFLAGS += -Werror
     else
       # Old versions of gcc (< 4.8) don't support #pragma diagnostic in functions.
       # Use this to disable use of that #pragma and the warnings it suppresses.

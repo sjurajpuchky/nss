@@ -9,7 +9,7 @@
 #include <memory.h>
 #include "blapi.h"
 #include "sha_fast.h"
-#include "prerror.h"
+#include <nspr4/prerror.h>
 
 #ifdef TRACING_SSL
 #include "ssl.h"

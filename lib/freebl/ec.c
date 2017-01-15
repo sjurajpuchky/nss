@@ -7,7 +7,7 @@
 #endif
 
 #include "blapi.h"
-#include "prerr.h"
+#include <nspr4/prerr.h>
 #include "secerr.h"
 #include "secmpi.h"
 #include "secitem.h"

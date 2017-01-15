@@ -16,10 +16,10 @@
 #include <dirent.h>
 #include "secrng.h"
 #include "secerr.h"
-#include "prerror.h"
-#include "prthread.h"
-#include "prprf.h"
-#include "prenv.h"
+#include <nspr4/prerror.h>
+#include <nspr4/prthread.h>
+#include <nspr4/prprf.h>
+#include <nspr4/prenv.h>
 
 size_t RNG_FileUpdate(const char *fileName, size_t limit);
 

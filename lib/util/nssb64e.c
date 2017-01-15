@@ -7,7 +7,7 @@
  */
 
 #include "nssb64.h"
-#include "nspr.h"
+#include <nspr4/nspr.h>
 #include "secitem.h"
 #include "secerr.h"
 

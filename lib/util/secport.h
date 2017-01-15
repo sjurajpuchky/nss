@@ -10,7 +10,7 @@
 #define _SECPORT_H_
 
 #include "utilrename.h"
-#include "prlink.h"
+#include <nspr4/prlink.h>
 
 /*
  * define XP_WIN, XP_BEOS, or XP_UNIX, in case they are not defined
@@ -45,10 +45,10 @@
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include "prtypes.h"
-#include "prlog.h" /* for PR_ASSERT */
-#include "plarena.h"
-#include "plstr.h"
+#include <nspr4/prtypes.h>
+#include <nspr4/prlog.h> /* for PR_ASSERT */
+#include <nspr4/plarena.h>
+#include <nspr4/plstr.h>
 
 /*
  * HACK for NSS 2.8 to allow Admin to compile without source changes.

@@ -19,7 +19,7 @@ include $(CORE_DEPTH)/coreconf/config.mk
 #######################################################################
 # (3) Include "component" configuration information. (OPTIONAL)       #
 #######################################################################
-
+INCLUDES += -I/usr/include/nspr4
 
 
 #######################################################################
@@ -70,6 +70,7 @@ endif
 ifdef USE_X32
 NSPR_CONFIGURE_OPTS += --enable-x32
 endif
+USE_64=1
 ifdef USE_64
 NSPR_CONFIGURE_OPTS += --enable-64bit
 endif

@@ -5,7 +5,7 @@
 #ifndef _SHA_FAST_H_
 #define _SHA_FAST_H_
 
-#include "prlong.h"
+#include <nspr4/prlong.h>
 #include "blapii.h"
 
 #define SHA1_INPUT_LEN 64

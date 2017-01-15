@@ -2,10 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#include "prtypes.h"
-#include "prtime.h"
+#include <nspr4/prtypes.h>
+#include <nspr4/prtime.h>
 #include "secder.h"
-#include "prlong.h"
+#include <nspr4/prlong.h>
 #include "secerr.h"
 
 #define HIDIGIT(v) (((v) / 10) + '0')

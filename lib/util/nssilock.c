@@ -15,13 +15,13 @@
  *
  */
 
-#include "prinit.h"
-#include "prerror.h"
-#include "prlock.h"
-#include "prmem.h"
-#include "prenv.h"
-#include "prcvar.h"
-#include "prio.h"
+#include <nspr4/prinit.h>
+#include <nspr4/prerror.h>
+#include <nspr4/prlock.h>
+#include <nspr4/prmem.h>
+#include <nspr4/prenv.h>
+#include <nspr4/prcvar.h>
+#include <nspr4/prio.h>
 
 #if defined(NEED_NSS_ILOCK)
 #include "prlog.h"

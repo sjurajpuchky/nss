@@ -580,7 +580,7 @@ vpath %.c mpi ecl
 vpath %.S mpi ecl
 vpath %.s mpi ecl
 vpath %.asm mpi ecl
-INCLUDES += -Impi -Iecl
+INCLUDES += -Impi -Iecl -I/usr/include/nspr4
 
 
 DEFINES += -DMP_API_COMPATIBLE

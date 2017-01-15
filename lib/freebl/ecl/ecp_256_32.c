@@ -6,7 +6,7 @@
 
 #include <string.h>
 
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "mpi.h"
 #include "mpi-priv.h"
 #include "ecp.h"

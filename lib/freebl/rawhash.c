@@ -6,7 +6,7 @@
 #include "stubs.h"
 #endif
 
-#include "nspr.h"
+#include <nspr4/nspr.h>
 #include "hasht.h"
 #include "blapi.h" /* below the line */
 #include "secerr.h"

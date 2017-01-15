@@ -6,12 +6,12 @@
 #include "stubs.h"
 #endif
 
-#include "prinit.h"
-#include "prenv.h"
-#include "prerr.h"
+#include <nspr4/prinit.h>
+#include <nspr4/prenv.h>
+#include <nspr4/prerr.h>
 #include "secerr.h"
 
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "blapi.h"
 #include "rijndael.h"
 

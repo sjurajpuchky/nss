@@ -5,7 +5,7 @@
 #ifdef FREEBL_NO_DEPEND
 #include "stubs.h"
 #endif
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "blapit.h"
 #include "blapii.h"
 #include "ctr.h"

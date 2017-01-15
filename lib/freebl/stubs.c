@@ -16,27 +16,27 @@
 #include <unistd.h>
 #include <sys/time.h>
 #include <dlfcn.h>
-#include <prio.h>
-#include <prlink.h>
-#include <prlog.h>
-#include <prthread.h>
-#include <plstr.h>
-#include <prinit.h>
-#include <prlock.h>
-#include <prmem.h>
-#include <prerror.h>
-#include <prmon.h>
-#include <pratom.h>
-#include <prsystem.h>
-#include <prinrval.h>
-#include <prtime.h>
-#include <prcvar.h>
+#include <nspr4/prio.h>
+#include <nspr4/prlink.h>
+#include <nspr4/prlog.h>
+#include <nspr4/prthread.h>
+#include <nspr4/plstr.h>
+#include <nspr4/prinit.h>
+#include <nspr4/prlock.h>
+#include <nspr4/prmem.h>
+#include <nspr4/prerror.h>
+#include <nspr4/prmon.h>
+#include <nspr4/pratom.h>
+#include <nspr4/prsystem.h>
+#include <nspr4/prinrval.h>
+#include <nspr4/prtime.h>
+#include <nspr4/prcvar.h>
 #include <secasn1.h>
 #include <secdig.h>
 #include <secport.h>
 #include <secitem.h>
 #include <blapi.h>
-#include <private/pprio.h>
+#include <nspr4/private/pprio.h>
 
 #define FREEBL_NO_WEAK 1
 

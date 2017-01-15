@@ -38,8 +38,8 @@ def main():
         print('-DNSS_NO_GCC48')
         return
 
-    print('-Werror')
-    print('-Wall')
+    #print('-Werror')
+    #print('-Wall')
 
     def set_warning(warning, contra=''):
         if warning_supported(warning):

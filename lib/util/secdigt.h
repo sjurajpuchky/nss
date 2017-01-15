@@ -9,7 +9,7 @@
 #define _SECDIGT_H_
 
 #include "utilrename.h"
-#include "plarena.h"
+#include <nspr4/plarena.h>
 #include "secoidt.h"
 #include "secitem.h"
 

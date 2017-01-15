@@ -11,7 +11,7 @@
  * secoid.h - public data structures and prototypes for ASN.1 OID functions
  */
 
-#include "plarena.h"
+#include <nspr4/plarena.h>
 
 #include "seccomon.h"
 #include "secoidt.h"

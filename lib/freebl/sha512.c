@@ -9,13 +9,13 @@
 #include "stubs.h"
 #endif
 
-#include "prcpucfg.h"
+#include <nspr4/prcpucfg.h>
 #if defined(NSS_X86) || defined(SHA_NO_LONG_LONG)
 #define NOUNROLL512 1
 #undef HAVE_LONG_LONG
 #endif
-#include "prtypes.h" /* for PRUintXX */
-#include "prlong.h"
+#include <nspr4/prtypes.h> /* for PRUintXX */
+#include <nspr4/prlong.h>
 #include "secport.h" /* for PORT_XXX */
 #include "blapi.h"
 #include "sha256.h" /* for struct SHA256ContextStr */

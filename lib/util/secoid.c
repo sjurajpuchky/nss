@@ -6,8 +6,8 @@
 #include "pkcs11t.h"
 #include "secitem.h"
 #include "secerr.h"
-#include "prenv.h"
-#include "plhash.h"
+#include <nspr4/prenv.h>
+#include <nspr4/plhash.h>
 #include "nssrwlk.h"
 #include "nssutil.h"
 
@@ -2022,7 +2022,7 @@ SECOID_Init(void)
     PLHashEntry *entry;
     const SECOidData *oid;
     int i;
-    char *envVal;
+    char *envVal=malloc(256);
 
 #define NSS_VERSION_VARIABLE __nss_util_version
 #include "verref.h"

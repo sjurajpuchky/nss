@@ -6,11 +6,11 @@
 #include "stubs.h"
 #endif
 
-#include "prerr.h"
+#include <nspr4/prerr.h>
 #include "secerr.h"
 
-#include "prtypes.h"
-#include "prlong.h"
+#include <nspr4/prtypes.h>
+#include <nspr4/prlong.h>
 
 #include "blapi.h"
 #include "blapii.h"

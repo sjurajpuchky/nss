@@ -9,8 +9,8 @@
 #define _BLAPIT_H_
 
 #include "seccomon.h"
-#include "prlink.h"
-#include "plarena.h"
+#include <nspr4/prlink.h>
+#include <nspr4/plarena.h>
 #include "ecl-exp.h"
 
 /* RC2 operation modes */

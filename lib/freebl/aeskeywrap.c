@@ -9,13 +9,13 @@
 #include "stubs.h"
 #endif
 
-#include "prcpucfg.h"
+#include <nspr4/prcpucfg.h>
 #if defined(IS_LITTLE_ENDIAN) || defined(SHA_NO_LONG_LONG)
 #define BIG_ENDIAN_WITH_64_BIT_REGISTERS 0
 #else
 #define BIG_ENDIAN_WITH_64_BIT_REGISTERS 1
 #endif
-#include "prtypes.h" /* for PRUintXX */
+#include <nspr4/prtypes.h> /* for PRUintXX */
 #include "secport.h" /* for PORT_XXX */
 #include "secerr.h"
 #include "blapi.h" /* for AES_ functions */

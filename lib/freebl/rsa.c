@@ -11,9 +11,9 @@
 
 #include "secerr.h"
 
-#include "prclist.h"
+#include <nspr4/prclist.h>
 #include "nssilock.h"
-#include "prinit.h"
+#include <nspr4/prinit.h>
 #include "blapi.h"
 #include "mpi.h"
 #include "mpprime.h"

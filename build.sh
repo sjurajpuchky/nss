@@ -78,6 +78,7 @@ ninja_params=()
 
 # try to guess sensible defaults
 arch=$(python "$cwd"/coreconf/detect_host_arch.py)
+echo "$arch";
 if [ "$arch" = "x64" -o "$arch" = "aarch64" ]; then
     build_64=1
 fi

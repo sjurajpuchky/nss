@@ -12,7 +12,7 @@
 #define _SECASN1_H_
 
 #include "utilrename.h"
-#include "plarena.h"
+#include <nspr4/plarena.h>
 
 #include "seccomon.h"
 #include "secasn1t.h"

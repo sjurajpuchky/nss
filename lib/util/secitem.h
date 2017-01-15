@@ -12,8 +12,8 @@
  *             SECItems
  */
 
-#include "plarena.h"
-#include "plhash.h"
+#include <nspr4/plarena.h>
+#include <nspr4/plhash.h>
 #include "seccomon.h"
 
 SEC_BEGIN_PROTOS

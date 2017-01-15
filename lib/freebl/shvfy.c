@@ -8,12 +8,12 @@
 #endif
 
 #include "shsign.h"
-#include "prlink.h"
-#include "prio.h"
+#include <nspr4/prlink.h>
+#include <nspr4/prio.h>
 #include "blapi.h"
 #include "seccomon.h"
 #include "stdio.h"
-#include "prmem.h"
+#include <nspr4/prmem.h>
 #include "hasht.h"
 #include "pqg.h"
 #include "blapii.h"

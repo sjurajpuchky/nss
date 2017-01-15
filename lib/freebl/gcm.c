@@ -10,7 +10,7 @@
 #include "gcm.h"
 #include "ctr.h"
 #include "secerr.h"
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 #include "pkcs11t.h"
 
 #include <limits.h>

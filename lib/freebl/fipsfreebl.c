@@ -13,7 +13,7 @@
 #include "blapi.h"
 #include "seccomon.h" /* Required for RSA and DSA. */
 #include "secerr.h"
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 
 #ifdef NSS_ENABLE_ECC
 #include "ec.h" /* Required for ECDSA */

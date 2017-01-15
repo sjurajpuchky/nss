@@ -5,7 +5,7 @@
 #ifndef _SHA_256_H_
 #define _SHA_256_H_
 
-#include "prtypes.h"
+#include <nspr4/prtypes.h>
 
 struct SHA256ContextStr {
     union {

@@ -16,8 +16,8 @@
  * reference counted, and are 'owned' by their respective SFTKDBHandles.
  */
 
-#include "prprf.h"
-#include "prsystem.h"
+#include <nspr4/prprf.h>
+#include <nspr4/prsystem.h>
 #include "secport.h"
 #include "utilpars.h"
 #include "secerr.h"

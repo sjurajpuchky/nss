@@ -1,14 +1,14 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-#include "prerror.h"
+#include <nspr4/prerror.h>
 #include "secerr.h"
 #include "secport.h"
-#include "prinit.h"
-#include "prprf.h"
-#include "prtypes.h"
-#include "prlog.h"
-#include "plstr.h"
+#include <nspr4/prinit.h>
+#include <nspr4/prprf.h>
+#include <nspr4/prtypes.h>
+#include <nspr4/prlog.h>
+#include <nspr4/plstr.h>
 #include "nssutil.h"
 #include <string.h>
 
