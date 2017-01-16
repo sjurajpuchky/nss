@@ -395,6 +395,7 @@ done:
     /* if we couldn't open a pkcs11 database, look for the old one */
     if (fd == NULL) {
         char *olddbname = _NSSUTIL_GetOldSecmodName(dbname, filename);
+	printf("%s\n",olddbname);
         PRStatus status;
 
         /* couldn't get the old name */
@@ -728,6 +729,9 @@ NSSUTIL_DoModuleDBFunction(unsigned long function, char *parameters, void *args)
 
     secmod = _NSSUTIL_GetSecmodName(parameters, &dbType, &appName,
                                     &filename, &rw);
+    
+    
+    printf("FN:%s\n",filename);
     if ((dbType == NSS_DB_TYPE_LEGACY) ||
         (dbType == NSS_DB_TYPE_MULTIACCESS)) {
         /* we can't handle the old database, only softoken can */

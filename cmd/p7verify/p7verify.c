@@ -43,6 +43,8 @@ AlgorithmToHashType(SECAlgorithmID *digestAlgorithms)
             return HASH_AlgMD5;
         case SEC_OID_SHA1:
             return HASH_AlgSHA1;
+	case SEC_OID_SHA256:
+	    return HASH_AlgSHA256;
         default:
             fprintf(stderr, "should never get here\n");
             return HASH_AlgNULL;
