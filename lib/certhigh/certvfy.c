@@ -754,7 +754,6 @@ cert_VerifyCertChainOld(CERTCertDBHandle *handle, CERTCertificate *cert,
         rv = isIssuerCertAllowedAtCertIssuanceTime(issuerCert, cert);
         if (rv != SECSuccess) {
 
-	            printf("FN5: %d\n",rv);
             PORT_SetError(SEC_ERROR_UNTRUSTED_ISSUER);
             LOG_ERROR(log, issuerCert, count + 1, 0);
             goto loser;
@@ -820,7 +819,6 @@ cert_VerifyCertChainOld(CERTCertDBHandle *handle, CERTCertificate *cert,
                     ((flags & (CERTDB_TRUSTED | CERTDB_TRUSTED_CA)) == 0)) {
                     /* untrusted -- the cert is explicitly untrusted, not
                      * just that it doesn't chain to a trusted cert */
-	            printf("FN1: %d\n",flags);
                     PORT_SetError(SEC_ERROR_UNTRUSTED_ISSUER);
                     LOG_ERROR_OR_EXIT(log, issuerCert, count + 1, flags);
                 }
@@ -849,7 +847,6 @@ cert_VerifyCertChainOld(CERTCertDBHandle *handle, CERTCertificate *cert,
                         ((flags & (CERTDB_TRUSTED | CERTDB_TRUSTED_CA)) == 0)) {
                         /* untrusted -- the cert is explicitly untrusted, not
                          * just that it doesn't chain to a trusted cert */
-	            printf("FN2: %d\n",flags);
                         PORT_SetError(SEC_ERROR_UNTRUSTED_ISSUER);
                         LOG_ERROR_OR_EXIT(log, issuerCert, count + 1, flags);
                     }
@@ -887,7 +884,6 @@ cert_VerifyCertChainOld(CERTCertDBHandle *handle, CERTCertificate *cert,
          * stop here to prevent looping.
          */
         if (issuerCert->isRoot) {
-	            printf("FN3\n");
             PORT_SetError(SEC_ERROR_UNTRUSTED_ISSUER);
             LOG_ERROR(log, issuerCert, count + 1, 0);
             goto loser;
@@ -1118,7 +1114,6 @@ CERT_VerifyCACertForUsage(CERTCertDBHandle *handle, CERTCertificate *cert,
      * stop here to prevent looping.
      */
     if (cert->isRoot) {
-	printf("FN4\n");
         PORT_SetError(SEC_ERROR_UNTRUSTED_ISSUER);
         LOG_ERROR(log, cert, 0, 0);
         goto loser;
