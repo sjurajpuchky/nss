@@ -731,8 +731,10 @@ NSS_CMSMessage_CreateFromDER(SECItem *DERmessage,
     /* first arg(poolp) == NULL => create our own pool */
     p7dcx = NSS_CMSDecoder_Start(NULL, cb, cb_arg, pwfn, pwfn_arg,
                                  decrypt_key_cb, decrypt_key_cb_arg);
-    if (p7dcx == NULL)
-        return NULL;
+    if (p7dcx == NULL) {
+    fprintf(stderr,"p7dcx is NULL\n");	
+    return NULL;
+    }
     NSS_CMSDecoder_Update(p7dcx, (char *)DERmessage->data, DERmessage->len);
     return NSS_CMSDecoder_Finish(p7dcx);
 }

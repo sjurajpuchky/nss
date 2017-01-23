@@ -1200,7 +1200,7 @@ _NSSUTIL_GetSecmodName(const char *param, NSSDBType *dbType, char **appName,
 
     *filename = secmodName;
     lconfigdir = _NSSUTIL_EvaluateConfigDir(configdir, dbType, appName);
-    printf("_NSSUTIL_GetSecmodName:%s\n",filename);
+    // printf("_NSSUTIL_GetSecmodName:%s\n",filename);
     if (NSSUTIL_ArgHasFlag("flags", "noModDB", save_params)) {
         /* there isn't a module db, don't load the legacy support */
         noModDB = PR_TRUE;

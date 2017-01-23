@@ -731,7 +731,7 @@ NSSUTIL_DoModuleDBFunction(unsigned long function, char *parameters, void *args)
                                     &filename, &rw);
     
     
-    printf("FN:%s\n",filename);
+    //printf("FN:%s\n",filename);
     if ((dbType == NSS_DB_TYPE_LEGACY) ||
         (dbType == NSS_DB_TYPE_MULTIACCESS)) {
         /* we can't handle the old database, only softoken can */
