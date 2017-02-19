@@ -16,6 +16,7 @@
 #include "sslt.h"
 #include <stdio.h>
 
+
 #ifdef SECUTIL_NEW
 typedef int (*SECU_PPFunc)(PRFileDesc *out, SECItem *item,
                            char *msg, int level);
@@ -33,6 +34,7 @@ extern void SECU_PrintSystemError(const char *progName, const char *msg, ...);
 extern void SECU_PrintErrMsg(FILE *out, int level, const char *progName,
                              const char *msg, ...);
 
+extern SECStatus SECU_BufferToItem(SECItem *dst, unsigned char *buff, unsigned long len);
 /* Read the contents of a file into a SECItem */
 extern SECStatus SECU_FileToItem(SECItem *dst, PRFileDesc *src);
 extern SECStatus SECU_TextFileToItem(SECItem *dst, PRFileDesc *src);

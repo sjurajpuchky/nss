@@ -24,6 +24,8 @@
 #include <unistd.h>
 #endif
 
+#include <string.h>
+
 #include "secoid.h"
 #include "sslt.h"
 
@@ -138,6 +140,22 @@ secu_StdinToItem(SECItem *dst)
     }
 
     return SECSuccess;
+}
+SECStatus
+SECU_BufferToItem(SECItem *dst, unsigned char *buff, unsigned long len) {
+
+	dst->data = 0;
+	    if (!SECITEM_AllocItem(NULL, dst, len)) {
+	        goto loser;
+	    }
+	    if(memcpy(dst->data, buff, len)==NULL) {
+	    	goto loser;
+	    }
+	return SECSuccess;
+	loser:
+	    SECITEM_FreeItem(dst, PR_FALSE);
+	    dst->data = NULL;
+	    return SECFailure;
 }
 
 SECStatus
