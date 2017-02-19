@@ -604,9 +604,10 @@ NSS_CMSDecoder_Start(PLArenaPool *poolp,
     NSSCMSMessage *cmsg;
 
     cmsg = NSS_CMSMessage_Create(poolp);
-    if (cmsg == NULL)
+    if (cmsg == NULL) {
+	fprintf(stderr,"NSS_CMSMessage_Create is null\n");
         return NULL;
-
+    }
     NSS_CMSMessage_SetEncodingParams(cmsg, pwfn, pwfn_arg, decrypt_key_cb,
                                      decrypt_key_cb_arg, NULL, NULL);
 
@@ -645,6 +646,7 @@ NSS_CMSDecoder_Update(NSSCMSDecoderContext *p7dcx, const char *buf,
     SECStatus rv = SECSuccess;
     if (p7dcx->dcx != NULL && p7dcx->error == 0) {
         /* if error is set already, don't bother */
+	fprintf(stderr,"p7dcx->type=%d|%d|%d\n",p7dcx->type,p7dcx->first_decoded,buf[0]);
         if ((p7dcx->type == SEC_OID_PKCS7_SIGNED_DATA) && (p7dcx->first_decoded == PR_TRUE) && (buf[0] == SEC_ASN1_INTEGER)) {
             /* Microsoft Windows 2008 left out the Sequence wrapping in some
              * of their kerberos replies. If we are here, we most likely are
@@ -655,13 +657,15 @@ NSS_CMSDecoder_Update(NSSCMSDecoderContext *p7dcx, const char *buf,
                 { SEC_ASN1_SEQUENCE | SEC_ASN1_CONSTRUCTED, 0x80 };
             rv = SEC_ASN1DecoderUpdate(p7dcx->dcx, lbuf, sizeof(lbuf));
             if (rv != SECSuccess) {
+		fprintf(stderr,"GOTO loser\n");
                 goto loser;
             }
             /* ok, we're going to need the indefinite finish when we are done */
             p7dcx->need_indefinite_finish = PR_TRUE;
         }
-
+	fprintf(stderr,"SEC_ASN1DecoderUpdate len=%d\n",len);
         rv = SEC_ASN1DecoderUpdate(p7dcx->dcx, buf, len);
+	fprintf(stderr,"rv=%d\n",rv);
     }
 
 loser:
@@ -673,6 +677,7 @@ loser:
             p7dcx->error = -1;
     }
 
+    fprintf(stderr,"p7dcx->error=%d\n",p7dcx->error);
     if (p7dcx->error == 0)
         return SECSuccess;
 
@@ -708,9 +713,21 @@ NSS_CMSDecoder_Finish(NSSCMSDecoderContext *p7dcx)
 
     cmsg = p7dcx->cmsg;
 
+    fprintf(stderr,"1()\n");
+    //SECStatus ans1 = SEC_ASN1DecoderFinish(p7dcx->dcx);
+    fprintf(stderr,"2()\n");
+    //SECStatus cms = nss_cms_after_end(p7dcx);
+
+    fprintf(stderr,"3()\n");
+    //fprintf(stderr,"ANS1=%d CMS=%d\n",ans1,cms);
+
+    if (p7dcx->dcx == NULL) {
+    fprintf(stderr,"p7dcx->dcx is NULL\n");
+    }
     if (p7dcx->dcx == NULL ||
         SEC_ASN1DecoderFinish(p7dcx->dcx) != SECSuccess ||
         nss_cms_after_end(p7dcx) != SECSuccess) {
+	fprintf(stderr,"NSS_CMSDecoder_Finish is NULL\n");
         NSS_CMSMessage_Destroy(cmsg); /* get rid of pool if it's ours */
         cmsg = NULL;
     }
@@ -731,8 +748,10 @@ NSS_CMSMessage_CreateFromDER(SECItem *DERmessage,
     /* first arg(poolp) == NULL => create our own pool */
     p7dcx = NSS_CMSDecoder_Start(NULL, cb, cb_arg, pwfn, pwfn_arg,
                                  decrypt_key_cb, decrypt_key_cb_arg);
-    if (p7dcx == NULL)
-        return NULL;
+    if (p7dcx == NULL) {
+    fprintf(stderr,"p7dcx is NULL\n");	
+    return NULL;
+    }
     NSS_CMSDecoder_Update(p7dcx, (char *)DERmessage->data, DERmessage->len);
     return NSS_CMSDecoder_Finish(p7dcx);
 }

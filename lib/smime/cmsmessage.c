@@ -254,6 +254,7 @@ NSS_CMSMessage_IsSigned(NSSCMSMessage *cmsg)
     /* walk down the chain of contentinfos */
     for (cinfo = &(cmsg->contentInfo); cinfo != NULL;
          cinfo = NSS_CMSContentInfo_GetChildContentInfo(cinfo)) {
+	fprintf(stderr,"INFO: %d\n",NSS_CMSContentInfo_GetContentTypeTag(cinfo));
         switch (NSS_CMSContentInfo_GetContentTypeTag(cinfo)) {
             case SEC_OID_PKCS7_SIGNED_DATA:
                 if (!NSS_CMSArray_IsEmpty((void **)cinfo->content.signedData->signerInfos))
@@ -264,6 +265,7 @@ NSS_CMSMessage_IsSigned(NSSCMSMessage *cmsg)
                 break;
         }
     }
+	fprintf(stderr,"INFO END: \n");
     return PR_FALSE;
 }
 
